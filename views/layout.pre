@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title><%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/cosmo.min.css" />
+        <link rel="stylesheet" type="text/css" media="screen" href="/css/index.css" />
+
+        <script type="text/javascript" src="/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="/underscore/underscore-min.js"></script>
+        <script type="text/javascript" src="/backbone/backbone.js"></script>
+        <script type="text/javascript" src="/react/react.js"></script>
+        <script type="text/javascript" src="/conduitjs/lib/conduit.js"></script>
+        <script type="text/javascript" src="/lodash/dist/lodash.js"></script>
+        <script type="text/javascript" src="/postal.js/lib/postal.js"></script>
+        <script type="text/javascript" src="/moment/moment.js"></script>
+        <script type="text/javascript" src="/js/md5.js"></script>
+        <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+        <!-- @if NODE_ENV="production" -->
+            <script type="text/javascript" src="<!-- @echo STATIC_URL -->/js/Frameworks.<!-- @echo GIT_HEAD -->.min.js"></script>
+        <!-- @endif -->
+        <!-- @if NODE_ENV!="production" -->
+            <script type="text/javascript" src="<!-- @echo STATIC_URL -->/js/Frameworks.js"></script>
+        <!-- @endif -->
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4"><h1 class="pull-left">ChatApp</h1></div>
+                <div class="col-sm-4 col-sm-offset-4 top-margin">
+                    <div class="pull-right">
+                        <% if (isAuthenticated) { %>
+                            <%- partial("partials/user-loggedin")  %>
+                        <% } else { %>
+                            <%- partial("partials/user-loggedout") %>
+                        <% } %>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <%- body %>
+            </div>
+        </div>
+        <div class="container">
+            <small>Commit: <!-- @echo GIT_HEAD --></small>
+        </div>
+    </body>
+</html>

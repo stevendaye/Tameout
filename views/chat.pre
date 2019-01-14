@@ -1,0 +1,13 @@
+<div id = "app"></div>
+
+<!-- @if NODE_ENV="production" -->
+    <script type="text/javascript" src="<!-- @echo STATIC_URL -->/js/ChatPage.<!-- @echo GIT-HEAD -->.min.js"></script>
+<!-- @endif -->
+
+<!-- @if NODE_ENV!="production" -->
+    <script type="text/javascript" src="<!-- @echo STATIC_URL -->/js/ChatPage.js"></script>
+<!-- @endif -->
+
+<script type="text/javascript" src="/js/models.js"></script>
+<script type="text/javascript" src="/js/components.js"></script>
+<script type="text/javascript" src="/js/chat.js"></script>

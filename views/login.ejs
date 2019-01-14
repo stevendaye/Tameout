@@ -1,0 +1,35 @@
+<p>Indentify yourself to login</p>
+<div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+        <div class="row">
+            <div class="col-sm-12">
+                <form method="POST" action="<%= routes.login %>">
+                    <% if (message.length > 0) { %>
+                        <div class="alert alert-danger"><%= message %></div>
+                    <% } %>
+                    <input type="hidden", name="_csrf" value="<%= token %>">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="username"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password"/>
+                    </div>
+                    <input type="submit" class="btn btn-block btn-primary" value="Login"/>
+                </form>
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-6">
+                    <a class="btn btn-block facebook" href="<%= routes.facebookAuth %>"><i class="fa fa-facebook"></i>Facebook</a>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-block google" href="<%= routes.googleAuth %>"><i class="fa fa-google-plus"></i>Google</a>
+                </div>
+                <div class="col-sm-6" style="display: 'none'">
+                    <a class="btn btn-block twitter" href="<%= routes.twitterAuth %>"><i class="fa fa-twitter"></i>Twitter</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

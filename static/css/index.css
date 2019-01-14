@@ -1,0 +1,30 @@
+.facebook {
+    background: #3b5998;
+    color: #ffffff;
+}
+.google {
+    background: #dd4b39;
+    color: #ffffff;
+}
+.twitter {
+    background: steelblue;
+    color: #ffffff;
+}
+.top-margin {
+    margin-top: 20px;
+}
+.col-sm-12 {
+    margin-top: 10px;
+}
+.col-sm-6 {
+    padding: 0 1px 0 1px;
+    margin-bottom: 10px;
+}
+.chat-list {
+    max-height: 500px;
+    overflow: auto;
+}
+.chat-message {
+    padding: 5px;
+    margin: 5px 0;
+}
